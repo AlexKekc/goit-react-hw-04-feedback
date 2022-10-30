@@ -9,11 +9,7 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const optionsOfFeedBack = () => {
-    const optionsArray = [...Object.keys({ good, neutral, bad })];
-
-    return optionsArray;
-  };
+  const optionsArray = [...Object.keys({ good, neutral, bad })];
 
   const feedbackCounter = event => {
     const feedbackOptionValue = event.currentTarget.value;
@@ -46,7 +42,7 @@ export const App = () => {
     <>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={optionsOfFeedBack()}
+          options={optionsArray}
           onLeaveFeedback={feedbackCounter}
         />
       </Section>
